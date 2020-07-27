@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="600.0" maxWidth="1200.0" minHeight="600.0" minWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-opacity: 1.0;" styleClass="bodybg" stylesheets="@BackgroundMain.CSS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="572.0" prefWidth="1175.0" style="-fx-border-radius: 20; -fx-border-color: black;">
+            <children>
+                <Button layoutX="1070.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSearchAssociatedParts" prefHeight="45.0" prefWidth="70.0" style="-fx-padding: 10;" text="Search" />
+                <TableView fx:id="searchPartsTableView" layoutX="597.0" layoutY="67.0" opacity="0.8" prefHeight="172.0" prefWidth="538.0">
+                    <columns>
+                        <TableColumn fx:id="partIDColumn" prefWidth="77.0" text="Part ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="partID" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="partNameColumn" prefWidth="261.0" text="Part Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="partName" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="partInvQtyColumn" prefWidth="85.0" text="Inv Qty">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="partInStock" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="partPriceColumn" prefWidth="116.0" text="Price/Unit">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="partPrice" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                    <effect>
+                        <ColorAdjust brightness="-0.15" contrast="0.23" hue="1.0" saturation="-0.03" />
+                    </effect>
+                </TableView>
+                <TableView fx:id="associatedPartsTableView" layoutX="608.0" layoutY="308.0" opacity="0.9" prefHeight="172.0" prefWidth="538.0">
+                    <columns>
+                        <TableColumn fx:id="associatedPartIDColumn" prefWidth="77.0" text="Part ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="partID" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="associatedPartNameColumn" prefWidth="261.0" text="Part Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="partName" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="associatedPartInvQtyColumn" prefWidth="85.0" text="Inv Qty">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="partInStock" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="associatedPartPriceColumn" prefWidth="116.0" text="Price/Unit">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="partPrice" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                    <effect>
+                        <ColorAdjust brightness="-0.15" contrast="0.23" hue="1.0" saturation="-0.03" />
+                    </effect>
+                </TableView>
+                <Button layoutX="608.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleAddAssociatedPart" prefHeight="45.0" prefWidth="70.0" style="-fx-padding: 10;" text="Add" />
+                <Button layoutX="982.0" layoutY="502.0" mnemonicParsing="false" onAction="#handleSaveModifyProduct" prefHeight="45.0" prefWidth="70.0" style="-fx-padding: 10;" text="Save" />
+                <Button layoutX="621.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleDeleteAssociatedPart" prefHeight="45.0" prefWidth="70.0" style="-fx-padding: 10;" text="Delete" />
+                <Button layoutX="1077.0" layoutY="502.0" mnemonicParsing="false" onAction="#handleCancelModifyProduct" prefHeight="45.0" prefWidth="70.0" style="-fx-padding: 10;" text="Cancel" />
+                <TextField fx:id="modifyProductSearchField" layoutX="839.0" layoutY="18.0" />
+                <Label layoutX="155.0" layoutY="32.0" style="-fx-label-padding: 10;" text="Modify Product" textFill="#022239">
+                    <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="40.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="146.0" style="-fx-label-padding: 10;" text="Product ID" textFill="#022239">
+                    <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutY="221.0" style="-fx-label-padding: 10;" text="Product Name" textFill="#022239">
+                    <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="19.0" layoutY="294.0" style="-fx-label-padding: 10;" text="Inv Qty" textFill="#022239">
+                    <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="3.0" layoutY="365.0" style="-fx-label-padding: 10;" text="Price/Unit" textFill="#022239">
+                    <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="258.0" layoutY="441.0" style="-fx-label-padding: 10;" text="Max Qty" textFill="#022239">
+                    <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="productIDField" editable="false" layoutX="188.0" layoutY="148.0" opacity="0.85" prefHeight="37.0" prefWidth="220.0" promptText="Auto Gen Disabled" style="-fx-padding: 2; -fx-border-color: black;">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="productNameField" layoutX="188.0" layoutY="221.0" opacity="0.85" prefHeight="37.0" prefWidth="220.0" style="-fx-padding: 2; -fx-border-color: black;">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="productInvQtyField" layoutX="188.0" layoutY="294.0" opacity="0.85" prefHeight="37.0" prefWidth="220.0" style="-fx-padding: 2; -fx-border-color: black;">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="productPriceField" layoutX="188.0" layoutY="367.0" opacity="0.85" prefHeight="37.0" prefWidth="220.0" style="-fx-padding: 2; -fx-border-color: black;">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="14.0" layoutY="441.0" style="-fx-label-padding: 10;" text="Min Qty" textFill="#022239">
+                    <font>
+                        <Font name="Microsoft JhengHei UI Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="productMinField" layoutX="128.0" layoutY="447.0" maxHeight="-Infinity" opacity="0.85" prefHeight="37.0" prefWidth="120.0" style="-fx-padding: 2; -fx-border-color: black;">
+                    <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="productMaxField" layoutX="377.0" layoutY="447.0" opacity="0.85" prefHeight="37.0" prefWidth="120.0" style="-fx-padding: 2; -fx-border-color: black;">
+                    <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                    </font>
+                </TextField>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
